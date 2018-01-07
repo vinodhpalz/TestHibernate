@@ -3,7 +3,7 @@ package model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+// This is a product class
 @Entity
 @Table
 public class Product {
