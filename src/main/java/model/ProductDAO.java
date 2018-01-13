@@ -16,12 +16,14 @@ public class ProductDAO {
 	private boolean b = true;
 	private Transaction trans;
 	private Session s;
-	public boolean insertProduct(Product p) {
+	public boolean insertProduct(Product p, Product p1, Supplier sp) {
 		try
 		{
 			 s = DbConfig.getSess();
 			 trans = s.beginTransaction();
 			s.save(p);
+			s.save(p1);
+			s.save(sp);
 			trans.commit();
 			
 		}

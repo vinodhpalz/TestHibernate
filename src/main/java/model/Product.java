@@ -1,15 +1,27 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 // This is a product class
 @Entity
 @Table
 public class Product {
-	@Id
+	@Id @GeneratedValue
 	private int productId;
 	private String productName;
+	
+	@ManyToOne
+	private Supplier supplier;
+	
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
 	public int getProductId() {
 		return productId;
 	}
